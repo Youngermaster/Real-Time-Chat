@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat Go Vue Socket.io</title>
+
+    <!-- BOOTSTRAP CSS-->
+    <!-- TODO: ADD THE BOOTSTRAP CSS -->
+    <!-- CUSTOM CSS-->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Chat Go Vue Socket.io</h1>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="/" class="navbar-brand"></a>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-3">
+                <div id="chat-app" class="card">
+                    <div class="card-body">
+                        <ul>
+                            <li v-for="m in messages">
+                                {{m.text}} - {{m.date}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <form>
+                            <input type="text" class="form-control">
+                            <button @click="sendMessage".prevent type="submit" class="bnt btn-dark btn-block">
+                                Send
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VUE.JS CDN-->
+
+    <!-- SOCKET.IO CDN-->
+
+    <!-- CUSTOM JAVASCRIPT-->
+    <script src="main.js"></script>
+</body>
+
+</html>
