@@ -7,14 +7,14 @@ import (
 )
 
 func main() {
-	server, err := socketio.NewServer(nil)
+	socketioServer, err := socketio.NewServer(nil)
 	if err != nil {
 		log.Fatal(err)
 		return nil, err
 	}
 
-	// Sockets
-	server.On("connection", func (so socketio.Socket) {
+	// Sockets logic
+	socketioServer.On("connection", func (so socketio.Socket) {
 		log.Println("A new user connected.")
 
 		so.Join("chat_room")
@@ -25,7 +25,8 @@ func main() {
 		})
 	})
 
-	http.Handle("/socket.io/", server)
+	// Start all the server
+	http.Handle("/socket.io/", socketioServer)
 	http.Handle("/", http.FileServer(http.Dir("./public")))
 	log.Println("Server on port 3000")
 	log.Println("http://localhost:3000")
