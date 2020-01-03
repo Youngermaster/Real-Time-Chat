@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
-	"github.com/googolle/go-socket.io"
+	"github.com/googollee/go-socket.io"
 )
 
 func main() {
