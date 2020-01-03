@@ -6,7 +6,7 @@ This a real time chat application made with `Go`, `Vue.js` and `Sockets.io`.
 
 - Go:
 
-        go get "github.com/googolle/go-socket.io"
+        go get "github.com/googollee/go-socket.io"
 
 ## Preview
 
